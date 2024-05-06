@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
-resource "aws_iam_role" "example1" {
+resource "aws_iam_role" "example2" {
   name               = "eks-cluster-cloud"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
@@ -48,7 +48,7 @@ resource "aws_eks_cluster" "example" {
   ]
 }
 
-resource "aws_iam_role" "example1" {
+resource "aws_iam_role" "example2" {
   name = "eks-node-group-cloud"
 
   assume_role_policy = jsonencode({
